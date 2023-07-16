@@ -11,7 +11,7 @@ def get_image_src(url, headers):
         soup = BeautifulSoup(response.content, 'html.parser')
         image_links = []
         for img in soup.find_all('img'):
-            src = img.get('data-src')
+            src = img.get('src')
             if src:
                 image_links.append(urljoin(url, src))
         return image_links
@@ -31,7 +31,7 @@ def download_image(url, save_dir):
         print(f"Failed to download {url}")
 
 # 示例用法
-url = 'https://www.bilibili.com/read/cv22473568'  # 输入要获取HTML的网页URL
+url = 'put url here'  # 输入要获取HTML的网页URL
 
 # 添加自定义请求头
 headers = {
